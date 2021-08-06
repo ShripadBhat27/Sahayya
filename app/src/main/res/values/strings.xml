@@ -9,4 +9,18 @@
     <string name="invalid_username">Not a valid username</string>
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
+    <string name="home">Home</string>
+    <string name="profile">Profile</string>
+    <string name="add_new">Add New</string>
+    <string name="search">Search</string>
+    <string name="newpost_description">What You Want to talk about</string>
+    <string name="add_new_photo_textview">Add New Photo</string>
+    <string name="add_new_video_textview">Add New Video</string>
+    <string name="post">Post</string>
+    <string name="ask_for_help">Ask for help!</string>
+    <string name="about_us">About us</string>
+    <string name="donate">Donate</string>
+    <string name="ngo_name">Name of NGO</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

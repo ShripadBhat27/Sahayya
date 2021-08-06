@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".search_fragment">
+
+    <EditText
+        android:id="@+id/search_bar"
+        android:layout_width="302dp"
+        android:layout_height="41dp"
+        android:background="@drawable/add_new_post_description_bg"
+        android:ems="10"
+        android:hint="@string/search"
+        android:inputType="textPersonName"
+        android:padding="10sp"
+        android:textCursorDrawable="@drawable/cursor_clr"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.056" />
+
+    <ScrollView
+        android:id="@+id/scrollview_search_fragment"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_bar"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:id="@+id/linearLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10sp">
+
+            <Button
+                android:id="@+id/interst"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/red"
+                android:onClick="addBtns"
+                android:text="add_btn" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+<!--<ScrollView-->
+<!--xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--android:id="@+id/scroll"-->
+<!--android:layout_width="match_parent"-->
+<!--android:layout_height="wrap_content">-->
+
+<!--<LinearLayout-->
+<!--    android:id="@+id/container"-->
+<!--    android:orientation="vertical"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content">-->
+<!--</LinearLayout>-->
+
+<!--</ScrollView>-->
+

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".NewPost_fragment">
+
+    <LinearLayout
+        android:id="@+id/ngo_photo_name_ll"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/new_post_ngo_dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_weight="0"
+            android:background="@drawable/add_new_post_description_bg" />
+
+        <TextView
+            android:id="@+id/ngo_name_category_all_info"
+            android:layout_width="247dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="@string/ngo_name"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/post_desc_new_post" />
+    </LinearLayout>
+
+
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/upload_post"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ngo_photo_name_ll">
+
+        <EditText
+            android:id="@+id/post_desc_new_post"
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:hint="@string/newpost_description"
+            android:padding="5sp"
+            android:singleLine="false"
+            android:ellipsize="start"
+            android:background="@android:color/transparent"
+            android:textCursorDrawable="@drawable/cursor_clr"
+             />
+
+        <TextView
+            android:id="@+id/add_new_photo"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="2sp"
+            android:paddingStart="10sp"
+            android:paddingTop="5sp"
+            android:text="@string/add_new_photo_textview"
+            android:textSize="16sp"
+            app:drawableStartCompat="@drawable/ic_add_new_photo"
+            />
+
+        <TextView
+            android:id="@+id/add_new_video"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="2sp"
+            android:hint="@string/add_new_video_textview"
+            android:paddingStart="10sp"
+            android:paddingTop="5sp"
+            android:text="@string/add_new_video_textview"
+            android:textSize="16sp"
+            app:drawableStartCompat="@drawable/ic_add_new_video"
+            app:layout_constraintBottom_toTopOf="@+id/ask_for_help" />
+
+        <TextView
+            android:id="@+id/ask_for_help"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawablePadding="2sp"
+            android:hint="@string/ask_for_help"
+            android:paddingStart="10sp"
+            android:paddingTop="5sp"
+            android:text="@string/ask_for_help"
+            android:textSize="16sp"
+            app:drawableStartCompat="@drawable/ic_helping_hand"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/upload_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/dark_blue"
+        android:text="@string/post"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
+        app:rippleColor="@color/ripple_effect" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
