@@ -9,7 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NgoSocialApp">
+        <activity android:name=".Login"></activity>
+        <activity android:name=".registerNGO" />
+        <activity android:name=".registerDonor" />
+        <activity
+            android:name=".ui.login.RegisterDonor"
+            android:label="@string/title_activity_register_donor" />
         <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".SelectUserType">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
