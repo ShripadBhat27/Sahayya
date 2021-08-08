@@ -19,6 +19,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.io.Serializable;
+
 public class registerNGO extends AppCompatActivity {
     TextInputEditText name,email,password,year;
     Button register;
@@ -26,6 +28,7 @@ public class registerNGO extends AppCompatActivity {
     ProgressBar progressBar;
     FirebaseAuth fAuth;
     DatabaseReference databaseUsers,Typeofusers ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,14 +85,16 @@ public class registerNGO extends AppCompatActivity {
                             Toast.makeText(registerNGO.this, "USER CREATED", Toast.LENGTH_SHORT).show();
                             String userID=fAuth.getCurrentUser().getUid();
 
+
                             NGO u1=new NGO(Name,Email,Year);
 
-                            databaseUsers.child(userID).setValue(u1);
-                            Typeofusers.child(userID).setValue(1);
+//                            databaseUsers.child(userID).setValue(u1);
+                              Typeofusers.child(userID).setValue(1);
 
-
-
-                            startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                              Intent i=new Intent(getApplicationContext(),NgoBasicInfo.class);
+                              i.putExtra("ngoObj", (Serializable) u1);
+                              startActivity(i);
+                              overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                         }
                         else{
                             Toast.makeText(registerNGO.this, "ERROR ->"+task.getException().getMessage(), Toast.LENGTH_SHORT).show();

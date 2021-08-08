@@ -1,7 +1,105 @@
 package com.example.ngosocialapp;
 
-public class NGO {
-    String name,email,year;
+import java.io.Serializable;
+
+public class NGO implements Serializable {
+    String name,email,year,sector,address,phone,desc,website,insta,accountNum,reAccount,IFSC,recName;
+
+    public NGO(String name, String email, String year, String sector, String address, String phone, String desc, String website, String insta, String accountNum, String reAccount, String IFSC, String recName) {
+        this.name = name;
+        this.email = email;
+        this.year = year;
+        this.sector = sector;
+        this.address = address;
+        this.phone = phone;
+        this.desc = desc;
+        this.website = website;
+        this.insta = insta;
+        this.accountNum = accountNum;
+        this.reAccount = reAccount;
+        this.IFSC = IFSC;
+        this.recName = recName;
+    }
+
+    public String getSector() {
+        return sector;
+    }
+
+    public void setSector(String sector) {
+        this.sector = sector;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    public String getInsta() {
+        return insta;
+    }
+
+    public void setInsta(String insta) {
+        this.insta = insta;
+    }
+
+    public String getAccountNum() {
+        return accountNum;
+    }
+
+    public void setAccountNum(String accountNum) {
+        this.accountNum = accountNum;
+    }
+
+    public String getReAccount() {
+        return reAccount;
+    }
+
+    public void setReAccount(String reAccount) {
+        this.reAccount = reAccount;
+    }
+
+    public String getIFSC() {
+        return IFSC;
+    }
+
+    public void setIFSC(String IFSC) {
+        this.IFSC = IFSC;
+    }
+
+    public String getRecName() {
+        return recName;
+    }
+
+    public void setRecName(String recName) {
+        this.recName = recName;
+    }
 
     public NGO(String name, String email, String year) {
         this.name = name;
