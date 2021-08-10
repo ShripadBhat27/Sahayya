@@ -25,9 +25,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNav;
     DatabaseReference databaseReference;
+     int flg;
 
-    String userId;
-    static int flg;
+
     /*
      * This isNGO variable related work performeed for:
      * - hone (feed -> firebase recyclerview)
@@ -46,14 +46,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        userId= FirebaseAuth.getInstance().getCurrentUser().getUid();
-        databaseReference=FirebaseDatabase.getInstance().getReference("TypeOfUser").child(userId);
+        String userId= FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("TypeOfUser").child(userId);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                 flg=snapshot.getValue(Integer.class);
+                flg=snapshot.getValue(Integer.class);
 
             }
 
@@ -62,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
 
         bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);

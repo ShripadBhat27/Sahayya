@@ -40,7 +40,7 @@ public class NgoBank extends AppCompatActivity {
                 u1.setIFSC(IFSC.getText().toString());
                 String userID=fAuth.getCurrentUser().getUid();
                 databaseUsers.child(userID).setValue(u1);
-                databaseUser2.child(u1.getName()).setValue(u1);
+                databaseUser2.child(u1.getName()).setValue(userID);
                 startActivity(new Intent(getApplicationContext(),MainActivity.class));
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }

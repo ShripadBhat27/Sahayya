@@ -1,5 +1,6 @@
 package com.example.ngosocialapp;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,12 +12,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class SelectUserType extends AppCompatActivity {
     ImageView ngo_select,donor_select;
     Button select_type;
     FirebaseAuth fAuth;
     TextView take_to_login;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +43,7 @@ public class SelectUserType extends AppCompatActivity {
 
         fAuth= FirebaseAuth.getInstance();
         if(fAuth.getCurrentUser()!=null){
+
             startActivity(new Intent(getApplicationContext(),MainActivity.class));
             finish();
         }
