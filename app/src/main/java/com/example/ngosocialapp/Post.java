@@ -1,5 +1,7 @@
 package com.example.ngosocialapp;
 
+import android.net.Uri;
+
 public class Post {
     String postUrl;
     String caption;

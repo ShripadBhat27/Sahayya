@@ -1,64 +1,129 @@
 package com.example.ngosocialapp;
 
+import android.content.Context;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.Toast;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link home#newInstance} factory method to
- * create an instance of this fragment.
- */
+import com.example.ngosocialapp.AdapterClasses.FeedPostAdapter;
+import com.example.ngosocialapp.ModelClasses.FeedPostModal;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.annotations.NotNull;
+
+import java.util.ArrayList;
+
+
 public class home extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+
+    DatabaseReference postDatabase;
+    FeedPostAdapter adapter;
+    ArrayList<Post> feed_list;
+    RecyclerView feed_recyclerView;
+
+    View parentHolder;
+    Context mContext;
+    ImageView img;
 
     public home() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment home.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static home newInstance(String param1, String param2) {
-        home fragment = new home();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
+    @Override
+    public void onAttach(@NonNull @NotNull Context context) {
+        super.onAttach(context);
+        mContext = context;
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
-    }
+
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        parentHolder= inflater.inflate(R.layout.fragment_home, container, false);
+
+        feed_recyclerView = parentHolder.findViewById(R.id.feed);
+        Toast.makeText(mContext, "FeedFragment update", Toast.LENGTH_SHORT).show();
+        String userId= FirebaseAuth.getInstance().getCurrentUser().getUid();
+        postDatabase = FirebaseDatabase.getInstance().getReference("Posts");
+        feed_list = new ArrayList<>();
+        postDatabase.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange (@NonNull DataSnapshot snapshot){
+
+                for (DataSnapshot it : snapshot.getChildren()) {
+                    for (DataSnapshot it2 : it.getChildren()) {
+                        Post p=it2.getValue(Post.class);
+                        feed_list.add(p);
+                    }
+
+
+                }
+
+                adapter = new FeedPostAdapter(mContext,feed_list);
+
+                feed_recyclerView.setLayoutManager(new LinearLayoutManager(mContext));
+                feed_recyclerView.setAdapter(adapter);
+
+//              adapter.notifyDataSetChanged();
+
+            }
+
+            @Override
+            public void onCancelled (@NonNull DatabaseError error){
+
+            }
+
+        });
+
+
+
+
+//        adapter.notifyDataSetChanged();
+//        postDatabase.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange (@NonNull DataSnapshot snapshot){
+//
+//                for (DataSnapshot it : snapshot.getChildren()) {
+//                    Post p=it.getValue(Post.class);
+//                    feed_list.add(p);
+//                }
+//                Toast.makeText(mContext, "NO :"+feed_list.size(), Toast.LENGTH_SHORT).show();
+//                feed_recyclerView.setHasFixedSize(true);
+//
+//
+//
+//              adapter = new FeedPostAdapter(mContext,feed_list);
+//              adapter.notifyDataSetChanged();
+//
+//            }
+//
+//            @Override
+//            public void onCancelled (@NonNull DatabaseError error){
+//
+//            }
+//
+//        });
+
+
+
+        return parentHolder;
     }
 }
