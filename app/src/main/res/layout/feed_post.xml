@@ -10,6 +10,7 @@
     android:layout_marginBottom="20dp"
     android:scrollbars="vertical"
     app:cardCornerRadius="25dp"
+    android:background="@drawable/cursor_clr"
     app:cardElevation="0dp">
 
 
@@ -26,7 +27,7 @@
             android:layout_marginTop="12dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/common_google_signin_btn_icon_light_normal" />
+            app:srcCompat="@drawable/ic_helping_hand" />
 
         <TextView
             android:id="@+id/ngo_name_feed_post"
@@ -34,7 +35,10 @@
             android:layout_height="40dp"
             android:layout_margin="12dp"
             android:layout_marginTop="12dp"
+            android:fontFamily="@font/cagliostro"
             android:hint="NGO Name"
+            android:textSize="20sp"
+            android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/options_btn_feed_post"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/ngo_dp_feed_post"
@@ -58,7 +62,9 @@
             android:layout_marginLeft="10dp"
             android:layout_marginTop="8dp"
             android:layout_marginRight="12dp"
+            android:fontFamily="@font/cagliostro"
             android:hint="Caption"
+            android:textSize="16sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.03"
             app:layout_constraintStart_toStartOf="parent"

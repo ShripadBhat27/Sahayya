@@ -1,6 +1,7 @@
 package com.example.ngosocialapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,6 +20,7 @@ public class NgoBank extends AppCompatActivity {
     DatabaseReference databaseUsers,databaseUser2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ngo_bank);
         account=findViewById(R.id.NgoAccount);

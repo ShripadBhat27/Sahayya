@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import android.os.Handler;
@@ -136,6 +137,9 @@ public class NewPost_fragment extends Fragment {
             @Override
             public void onClick(View v) {
                 uploadImage();
+                AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                Fragment myFragment = new home();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, myFragment).addToBackStack(null).commit();
 
             }
         });

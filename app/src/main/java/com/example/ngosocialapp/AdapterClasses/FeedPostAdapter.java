@@ -10,13 +10,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 
 import com.bumptech.glide.Glide;
-import com.example.ngosocialapp.ModelClasses.FeedPostModal;
 import com.example.ngosocialapp.Post;
 import com.example.ngosocialapp.R;
+import com.example.ngosocialapp.ngoProfile;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -47,6 +49,15 @@ public class FeedPostAdapter extends RecyclerView.Adapter<FeedPostAdapter.viewHo
         Glide.with(mContext).load(ur).into(holder.postMedia);
         holder.caption.setText(post.getCaption());
         holder.ngoName.setText(post.getNgoName());
+        holder.ngoName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                Fragment myFragment = new ngoProfile();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, myFragment).addToBackStack(null).commit();
+
+            }
+        });
 
     }
 

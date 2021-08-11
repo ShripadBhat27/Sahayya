@@ -12,10 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import com.example.ngosocialapp.AdapterClasses.FeedPostAdapter;
-import com.example.ngosocialapp.ModelClasses.FeedPostModal;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -60,7 +58,6 @@ public class home extends Fragment {
         parentHolder= inflater.inflate(R.layout.fragment_home, container, false);
 
         feed_recyclerView = parentHolder.findViewById(R.id.feed);
-        Toast.makeText(mContext, "FeedFragment update", Toast.LENGTH_SHORT).show();
         String userId= FirebaseAuth.getInstance().getCurrentUser().getUid();
         postDatabase = FirebaseDatabase.getInstance().getReference("Posts");
         feed_list = new ArrayList<>();
