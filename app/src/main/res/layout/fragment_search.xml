@@ -7,50 +7,49 @@
     tools:context=".search_fragment">
 
     <EditText
-        android:id="@+id/search_bar"
+        android:id="@+id/type_ngo"
         android:layout_width="302dp"
-        android:layout_height="41dp"
+        android:layout_height="61dp"
+        android:layout_marginTop="125dp"
         android:background="@drawable/add_new_post_description_bg"
         android:ems="10"
         android:hint="@string/search"
         android:inputType="textPersonName"
         android:padding="10sp"
         android:textCursorDrawable="@drawable/cursor_clr"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/search_ngo"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.33"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.056" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <ScrollView
-        android:id="@+id/scrollview_search_fragment"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+    <Button
+        android:id="@+id/search_ngo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="29dp"
+        android:layout_marginBottom="504dp"
+        android:backgroundTint="@color/red"
+        android:text="Search"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_bar"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintTop_toBottomOf="@+id/type_ngo" />
 
-        <LinearLayout
-            android:id="@+id/linearLL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="10sp">
-
-            <Button
-                android:id="@+id/interst"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:backgroundTint="@color/red"
-                android:onClick="addBtns"
-                android:text="add_btn" />
-
-        </LinearLayout>
-    </ScrollView>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="139dp"
+        android:layout_marginBottom="57dp"
+        android:src="@drawable/ic_baseline_search_24"
+        app:layout_constraintBottom_toTopOf="@+id/search_ngo"
+        app:layout_constraintEnd_toStartOf="@+id/type_ngo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 

@@ -1,147 +1,335 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:fillViewport="true"
-    android:scrollbars = "vertical"
-    android:scrollbarStyle="insideInset">
+    android:orientation="vertical">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        style="@style/MaterialAlertDialog.MaterialComponents.Title.Panel"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ngoProfile">
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/profile_details_cardview"
-            style="@style/Widget.MaterialComponents.CardView"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="110dp"
-            app:cardElevation="5dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0">
+            android:layout_height="300dp"
+            android:padding="20dp"
+            android:background="@color/teal_200">
+            <ImageView
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:id="@+id/profile_image"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:src="@drawable/profile"
+                android:layout_centerVertical="true"/>
 
-                <ImageView
-                    android:id="@+id/ngo_profile_photo"
-                    android:layout_width="100dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="0dp"
-                    android:elevation="10dp"
-                    android:scaleType="centerCrop"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/ngo_name_ngo_profile_frag"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
+            <TextView
+                android:id="@+id/fullname_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/profile_image"
+                android:includeFontPadding="false"
+                android:text="Helping Hands"
+                android:textColor="#000"
+                android:textSize="20sp" />
 
-                <TextView
-                    android:id="@+id/ngo_name_ngo_profile_frag"
-                    style="@style/MaterialAlertDialog.MaterialComponents.Title.Text"
-                    android:layout_width="247dp"
-                    android:layout_height="33dp"
-                    android:elevation="10dp"
-                    android:hint="@string/ngo_name"
-                    android:padding="3sp"
-                    android:textSize="16sp"
-                    app:layout_constraintBottom_toTopOf="@+id/headline_ngo_profile"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.0" />
+            <TextView
+                android:id="@+id/username_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/fullname_field"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/profile_image"
+                android:includeFontPadding="false"
+                android:text="user_name"
+                android:textSize="14sp" />
 
-                <TextView
-                    android:id="@+id/headline_ngo_profile"
-                    android:layout_width="248dp"
-                    android:layout_height="62dp"
-                    android:elevation="10dp"
-                    android:hint="Headline"
-                    android:padding="3sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
 
-        </androidx.cardview.widget.CardView>
+        </RelativeLayout>   //upper part (profile part)
 
         <LinearLayout
-            android:id="@+id/linearLayout2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8sp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/profile_details_cardview">
+            android:layout_marginTop="-100dp"
+            android:padding="20dp"
 
-            <Button
-                android:id="@+id/about_us_btn"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3sp"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="125dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/blue"
-                android:padding="3sp"
-                android:text="@string/about_us"
-                android:textColor="@color/white"
-                app:cornerRadius="0dp"
-                app:rippleColor="@color/ripple_effect" />
+                app:cardElevation="10dp">
 
-            <Button
-                android:id="@+id/donate_btn"
-                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="3sp"
+                <RelativeLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:padding="5dp">
+
+
+                    <TextView
+
+                        android:id="@+id/donation_amount"
+                        android:includeFontPadding="false"
+                        android:layout_centerInParent="true"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="₹10000"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/payment_desc"
+                        android:includeFontPadding="false"
+                        android:layout_below="@id/donation_amount"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="Donation Received"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="0dp"
+                android:layout_height="125dp"
+                android:layout_margin="10dp"
                 android:layout_weight="1"
-                android:backgroundTint="@color/blue"
-                android:padding="3sp"
-                android:text="@string/donate"
-                android:textColor="@color/white"
-                app:cornerRadius="0dp"
-                app:rippleColor="@color/ripple_effect" />
-        </LinearLayout>
+                app:cardElevation="10dp">
+                <RelativeLayout
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"
+                    android:padding="5dp">
 
-        <View
-            android:id="@+id/horizontal_line"
+                    <ImageView
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="30dp"
+                        android:layout_width="30dp"
+                        />
+
+                    <TextView
+
+                        android:id="@+id/no_of_donation"
+                        android:includeFontPadding="false"
+                        android:layout_centerInParent="true"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="100"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/donation_no"
+                        android:includeFontPadding="false"
+                        android:layout_below="@id/no_of_donation"
+                        android:layout_centerHorizontal="true"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:text="No. of Donations"
+                        android:textSize="20sp" />
+
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>    // middle part (that consists of no. of donation)
+
+
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@color/teal_700"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.666"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
-
-        <View
-            android:id="@+id/view"
-            android:layout_width="match_parent"
-            android:layout_height="527dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/horizontal_line" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:rotation="-40"
-            android:text="Firebase recycler view post will be shoun here"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
-            app:layout_constraintEnd_toEndOf="@+id/view"
-            app:layout_constraintStart_toStartOf="@+id/view"
-            app:layout_constraintTop_toBottomOf="@+id/horizontal_line" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:orientation="vertical"
+            android:padding="20dp">
+
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full Name of NGO"
+                android:id="@+id/full_name_profile">
+                <EditText
+                    android:focusable="false"
+                    android:id="@+id/editTextTextPersonName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Helping Hands" />//add icon after height
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email Id"
+                android:id="@+id/email_id">
+                <EditText
+                    android:focusable="false"
+                    android:id="@+id/editTextTextEmailAddress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textEmailAddress"
+                    android:text="shriharsh.patil@walchandsangli.ac.in"/>//add icon after height
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Phone No."
+                android:id="@+id/phone_no">
+                <EditText
+                    android:focusable="false"
+                    android:id="@+id/editTextPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="phone"
+                    android:text="7774959844"/>//add icon after height
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Website"
+                android:id="@+id/Password">
+                <EditText
+                    android:focusable="false"
+
+                    android:id="@+id/website"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:text="www.github.com "/>//add icon after height
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Account No."
+                android:id="@+id/account_no">
+                <EditText
+                    android:focusable="false"
+
+                    android:id="@+id/editText_account_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:text="123456789123"/>//add icon after height
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="IFSC"
+                android:id="@+id/ifsc">
+                <EditText
+                    android:focusable="false"
+
+                    android:id="@+id/editTextifsc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:text="123456"/>//add icon after height
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Social Media Presence"
+                android:id="@+id/instagram">
+                <EditText
+                    android:focusable="false"
+
+                    android:id="@+id/editinstagram"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Instagram.com/helpinghands" />//add icon after height
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Adress of NGO"
+                android:id="@+id/address">
+                <EditText
+                    android:focusable="false"
+
+                    android:id="@+id/editadress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="MK Gandhi road" />//add icon after height
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description"
+                android:id="@+id/description">
+                <EditText
+                    android:focusable="false"
+
+                    android:id="@+id/editdescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="WE are rally awesome NGO" />//add icon after height
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Sector"
+                android:id="@+id/sector">
+                <EditText
+                    android:id="@+id/editsector"
+                    android:focusable="false"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Animal Relife" />//add icon after height
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <Button
+                android:background="#fece2f"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:id="@+id/donate"
+                android:text=" Donate" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ngo_feed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </LinearLayout>    //lower part (update section)
+
+
+
+    </LinearLayout>    //lower part (update section)
+
 
 
 </ScrollView>

@@ -5,7 +5,9 @@ import java.io.Serializable;
 public class NGO implements Serializable {
     String name,email,year,sector,address,phone,desc,website,insta,accountNum,reAccount,IFSC,recName;
     int postcnt;
+    public NGO(){
 
+    }
     public NGO(String name, String email, String year, String sector, String address, String phone, String desc, String website, String insta, String accountNum, String reAccount, String IFSC, String recName,int postcnt) {
         this.name = name;
         this.email = email;

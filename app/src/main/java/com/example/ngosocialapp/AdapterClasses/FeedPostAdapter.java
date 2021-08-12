@@ -3,6 +3,7 @@ package com.example.ngosocialapp.AdapterClasses;
 
 import android.content.Context;
 import android.net.Uri;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,6 +20,8 @@ import com.bumptech.glide.Glide;
 import com.example.ngosocialapp.Post;
 import com.example.ngosocialapp.R;
 import com.example.ngosocialapp.ngoProfile;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -53,7 +56,13 @@ public class FeedPostAdapter extends RecyclerView.Adapter<FeedPostAdapter.viewHo
             @Override
             public void onClick(View v) {
                 AppCompatActivity activity = (AppCompatActivity) v.getContext();
+                
                 Fragment myFragment = new ngoProfile();
+                Bundle bundle = new Bundle();
+                bundle.putString("sending_from_feed",post.getNgoName()); // Put anything what you want
+
+                myFragment.setArguments(bundle);
+
                 activity.getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, myFragment).addToBackStack(null).commit();
 
             }
