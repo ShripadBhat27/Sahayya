@@ -12,7 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NgoSocialApp">
-        <activity android:name=".NgoBank"></activity>
+        <activity android:name=".netbankpay"></activity>
+        <activity android:name=".splashAfterTran" />
+        <activity android:name=".upiPay" />
+        <activity android:name=".debitpay" />
+        <activity android:name=".creditPay" />
+        <activity android:name=".DonerPayment" />
+        <activity android:name=".NgoBank" />
         <activity android:name=".NgoProfileInfo" />
         <activity android:name=".NgoBasicInfo" />
         <activity android:name=".Login" />
@@ -32,6 +38,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

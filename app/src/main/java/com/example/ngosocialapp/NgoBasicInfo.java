@@ -27,15 +27,24 @@ public class NgoBasicInfo extends AppCompatActivity {
         firstNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = getIntent();
-                NGO u1 = (NGO)i.getSerializableExtra("ngoObj");
-                u1.setPhone(phone.getText().toString());
-                u1.setAddress(address.getText().toString());
-                u1.setSector(sector.getText().toString());
-                Intent j=new Intent(getApplicationContext(),NgoProfileInfo.class);
-                j.putExtra("ngoObj", (Serializable) u1);
-                startActivity(j);
-                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                if(sector.getText().toString().isEmpty()==true || address.getText().toString().isEmpty()==true ||
+                phone.getText().toString().isEmpty()==true)
+                {
+                    Toast.makeText(getApplicationContext(),"Few filed are empty",Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    Intent i = getIntent();
+                    NGO u1 = (NGO)i.getSerializableExtra("ngoObj");
+                    u1.setPhone(phone.getText().toString());
+                    u1.setAddress(address.getText().toString());
+                    u1.setSector(sector.getText().toString());
+                    Intent j=new Intent(getApplicationContext(),NgoProfileInfo.class);
+                    j.putExtra("ngoObj", (Serializable) u1);
+                    startActivity(j);
+                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+                }
+
             }
         });
     }

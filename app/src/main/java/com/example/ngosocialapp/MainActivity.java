@@ -46,7 +46,14 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        Button btn=findViewById(R.id.buttontra);
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent j=new Intent(getApplicationContext(),DonerPayment.class);
+                startActivity(j);
+            }
+        });
         userId= FirebaseAuth.getInstance().getCurrentUser().getUid();
         databaseReference=FirebaseDatabase.getInstance().getReference("TypeOfUser").child(userId);
 
