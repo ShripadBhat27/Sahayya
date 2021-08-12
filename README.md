@@ -1,6 +1,7 @@
 # **Sahayya**
 
 Sahayya  is our attempt to increase organic reach of NGO who are working for betterment of society. We completed this project as part of Hackathon organised by Zeta on hackerEarth platform.
+
 ```Sahayya means Aid, Pronunciation - sāhāyya, saahaayya```
 ## Objectives
 - To incrase Organic reach of NGO 
