@@ -1,8 +1,9 @@
 # **Sahayya**
 
-Sahayya  is our attempt to increase organic reach of NGO who are working for betterment of society. We completed this project as part of Hackathon organised by Zeta on hackerEarth platform.
-
+Sahayya  is our attempt to increase organic reach of NGO who are working for betterment of society. We completed this project as part of [Hackathon](https://zeta-hacks.hackerearth.com/) organised by [Zeta](https://www.zeta.tech/in) on hackerEarth platform.
 ```Sahayya means Aid, Pronunciation - sāhāyya, saahaayya```
+
+
 ## Objectives
 - To incrase Organic reach of NGO 
 - To connect poeple who want to help and NGO 
@@ -19,8 +20,17 @@ Sahayya  is our attempt to increase organic reach of NGO who are working for bet
         User / Person who want to donate
 - Can see Feed of NGO's 
 - Can help NGO's
+- Can see help history and total donations amount to NGO through App.
     
-# Group Members: 
+## Future Scope:
+- Adding upvote/ downvote and comments for post in the feed
+- Verify NGO through scrapping from [authenticated government information](https://ngodarpan.gov.in/index.php/home/statewise)
+- Adding volunteer help to app currently user / donor can help monetory help only
+- Support more file formats for post such as video and documents 
+- Add `Ask for help` formatted post to increase convenience of NGO
+
+
+## Group Members: 
 ```
 Akshay Pawar - worked on new post, feed and designed skeleton of app  
 Atharva Nhavkar - Worked on UI of app and documentations
@@ -29,4 +39,4 @@ Shriharsh Patil - Worked on UI of app
 Shripad Bhat - Worked on Authentication ( login and register ) and database related part of app
 ```
 
-Logo designed by ```Shubham Dhage``` 
+Logos designed by ```Shubham Dhage``` 
