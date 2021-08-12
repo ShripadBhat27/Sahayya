@@ -1,11 +1,11 @@
 package com.example.ngosocialapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
@@ -20,6 +20,7 @@ public class NgoBank extends AppCompatActivity {
     DatabaseReference databaseUsers,databaseUser2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ngo_bank);
         account=findViewById(R.id.NgoAccount);
@@ -34,24 +35,16 @@ public class NgoBank extends AppCompatActivity {
         firstNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(account.getText().toString().isEmpty()==true || reAccount.getText().toString().isEmpty()==true ||
-                        IFSC.getText().toString().isEmpty()==true || reci.getText().toString().isEmpty()==true)
-                {
-                    Toast.makeText(getApplicationContext(),"Few filed are empty",Toast.LENGTH_SHORT).show();
-                }
-                else
-                {
-                    Intent i = getIntent();
-                    NGO u1 = (NGO)i.getSerializableExtra("ngoObj");
-                    u1.setAccountNum(account.getText().toString());
-                    u1.setReAccount(reAccount.getText().toString());
-                    u1.setIFSC(IFSC.getText().toString());
-                    String userID=fAuth.getCurrentUser().getUid();
-                    databaseUsers.child(userID).setValue(u1);
-                    databaseUser2.child(u1.getName()).setValue(u1);
-                    startActivity(new Intent(getApplicationContext(),MainActivity.class));
-                    overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
-                }
+                Intent i = getIntent();
+                NGO u1 = (NGO)i.getSerializableExtra("ngoObj");
+                u1.setAccountNum(account.getText().toString());
+                u1.setReAccount(reAccount.getText().toString());
+                u1.setIFSC(IFSC.getText().toString());
+                String userID=fAuth.getCurrentUser().getUid();
+                databaseUsers.child(userID).setValue(u1);
+                databaseUser2.child(u1.getName()).setValue(userID);
+                startActivity(new Intent(getApplicationContext(),MainActivity.class));
+                overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             }
         });
     }

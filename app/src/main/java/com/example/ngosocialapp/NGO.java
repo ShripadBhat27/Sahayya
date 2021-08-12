@@ -4,8 +4,9 @@ import java.io.Serializable;
 
 public class NGO implements Serializable {
     String name,email,year,sector,address,phone,desc,website,insta,accountNum,reAccount,IFSC,recName;
+    int postcnt;
 
-    public NGO(String name, String email, String year, String sector, String address, String phone, String desc, String website, String insta, String accountNum, String reAccount, String IFSC, String recName) {
+    public NGO(String name, String email, String year, String sector, String address, String phone, String desc, String website, String insta, String accountNum, String reAccount, String IFSC, String recName,int postcnt) {
         this.name = name;
         this.email = email;
         this.year = year;
@@ -19,6 +20,15 @@ public class NGO implements Serializable {
         this.reAccount = reAccount;
         this.IFSC = IFSC;
         this.recName = recName;
+        this.postcnt=0;
+    }
+
+    public int getPostcnt() {
+        return postcnt;
+    }
+
+    public void setPostcnt(int postcnt) {
+        this.postcnt = postcnt;
     }
 
     public String getSector() {

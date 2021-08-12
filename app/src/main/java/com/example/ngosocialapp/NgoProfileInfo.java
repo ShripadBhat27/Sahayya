@@ -1,6 +1,7 @@
 package com.example.ngosocialapp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ public class NgoProfileInfo extends AppCompatActivity {
     TextInputEditText desc,web,insta;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ngo_profile_info);
         desc=findViewById(R.id.NgoBrief);

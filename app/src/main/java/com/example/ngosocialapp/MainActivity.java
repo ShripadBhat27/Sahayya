@@ -2,6 +2,7 @@ package com.example.ngosocialapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
@@ -25,9 +26,9 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNav;
     DatabaseReference databaseReference;
+     int flg;
 
-    String userId;
-    static int flg;
+
     /*
      * This isNGO variable related work performeed for:
      * - hone (feed -> firebase recyclerview)
@@ -44,23 +45,17 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button btn=findViewById(R.id.buttontra);
-        btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent j=new Intent(getApplicationContext(),DonerPayment.class);
-                startActivity(j);
-            }
-        });
-        userId= FirebaseAuth.getInstance().getCurrentUser().getUid();
-        databaseReference=FirebaseDatabase.getInstance().getReference("TypeOfUser").child(userId);
+        String userId= FirebaseAuth.getInstance().getCurrentUser().getUid();
+        DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("TypeOfUser").child(userId);
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                 flg=snapshot.getValue(Integer.class);
+                flg=snapshot.getValue(Integer.class);
 
             }
 
@@ -69,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
 
         bottomNav = findViewById(R.id.bottom_navigation);
         bottomNav.setOnNavigationItemSelectedListener(navListener);
