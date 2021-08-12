@@ -19,12 +19,16 @@ public class DonerPayment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_doner_payment);
+        Intent j=getIntent();
+        String str=j.getStringExtra("ngoname");
+        Toast.makeText(getApplicationContext(),str,Toast.LENGTH_SHORT).show();
         CardView debitBtn=findViewById(R.id.debitBtn);
         debitBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent j=new Intent(getApplicationContext(),debitpay.class);
-                startActivity(j);
+                Intent i=new Intent(getApplicationContext(),debitpay.class);
+                i.putExtra("ngoname",str);
+                startActivity(i);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
             }
@@ -33,8 +37,9 @@ public class DonerPayment extends AppCompatActivity {
         Upibtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent j=new Intent(getApplicationContext(),upiPay.class);
-                startActivity(j);
+                Intent i=new Intent(getApplicationContext(),upiPay.class);
+                i.putExtra("ngoname",str);
+                startActivity(i);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
             }
@@ -43,8 +48,9 @@ public class DonerPayment extends AppCompatActivity {
         creditBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent j=new Intent(getApplicationContext(),creditPay.class);
-                startActivity(j);
+                Intent i=new Intent(getApplicationContext(),creditPay.class);
+                i.putExtra("ngoname",str);
+                startActivity(i);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
             }
@@ -53,8 +59,9 @@ public class DonerPayment extends AppCompatActivity {
         netBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent j=new Intent(getApplicationContext(),netbankpay.class);
-                startActivity(j);
+                Intent i=new Intent(getApplicationContext(),netbankpay.class);
+                i.putExtra("ngoname",str);
+                startActivity(i);
                 overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
                 finish();
             }

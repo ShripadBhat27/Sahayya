@@ -1,6 +1,7 @@
 package com.example.ngosocialapp;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -25,6 +26,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.annotations.NotNull;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
@@ -235,6 +237,10 @@ public class ngoProfile extends Fragment {
             public void onClick(View v) {
 
                 // piyush cha kaaam
+
+                Intent i=new Intent(getActivity(),DonerPayment.class);
+                i.putExtra("ngoname",full_name_profile.getText().toString());
+                startActivity(i);
             }
         });
 

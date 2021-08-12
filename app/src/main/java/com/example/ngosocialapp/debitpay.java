@@ -34,7 +34,10 @@ public class debitpay extends AppCompatActivity {
         TextInputEditText creditnum=findViewById(R.id.debNum);
         TextInputEditText expdate=findViewById(R.id.debExp);
         TextInputEditText cvv=findViewById(R.id.debCVV);
-        String user,ngo="upingo";
+        Intent j=getIntent();
+        String str=j.getStringExtra("ngoname");
+        String user,ngo;
+        ngo=str;
         fAuth= FirebaseAuth.getInstance();
         databaseUsers= FirebaseDatabase.getInstance().getReference("transaction");
         user=fAuth.getUid();
@@ -54,7 +57,7 @@ public class debitpay extends AppCompatActivity {
                 {
                     transaction tra=new transaction(user,ngo,amount.getText().toString());
                     databaseUsers.child(user).push().setValue(tra);
-                    databaseUsers.child("shri").push().setValue(tra);
+                    databaseUsers.child(ngo).push().setValue(tra);
                     Intent j=new Intent(getApplicationContext(),splashAfterTran.class);
                     startActivity(j);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);

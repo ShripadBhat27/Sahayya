@@ -24,11 +24,14 @@ public class netbankpay extends AppCompatActivity {
         TextInputEditText amount=findViewById(R.id.AmountNet);
         TextInputEditText usernet=findViewById(R.id.netUser);
         TextInputEditText pass=findViewById(R.id.netPass);
+        Intent j=getIntent();
+        String str=j.getStringExtra("ngoname");
         fAuth= FirebaseAuth.getInstance();
         databaseUsers= FirebaseDatabase.getInstance().getReference("transaction");
         databaseUsers2=FirebaseDatabase.getInstance().getReference("transaction");
-        String user,ngo="n2";
+        String user,ngo;
         user=fAuth.getUid();
+        ngo=str;
         Button btn=findViewById(R.id.netpay);
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -43,7 +46,7 @@ public class netbankpay extends AppCompatActivity {
                 {
                     transaction tra=new transaction(user,ngo,amount.getText().toString());
                     databaseUsers.child(user).push().setValue(tra);
-                    databaseUsers.child("shri").push().setValue(tra);
+                    databaseUsers.child(ngo).push().setValue(tra);
                     Intent j=new Intent(getApplicationContext(),splashAfterTran.class);
                     startActivity(j);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);

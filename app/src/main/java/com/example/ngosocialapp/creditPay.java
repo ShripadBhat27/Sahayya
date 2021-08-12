@@ -32,11 +32,14 @@ public class creditPay extends AppCompatActivity  {
         TextInputEditText creditnum=findViewById(R.id.creditNum);
         TextInputEditText expdate=findViewById(R.id.creExp);
         TextInputEditText cvv=findViewById(R.id.creditCVV);
+        Intent j=getIntent();
+        String str=j.getStringExtra("ngoname");
         Toast.makeText(getApplicationContext(),"credit",Toast.LENGTH_SHORT).show();
         fAuth= FirebaseAuth.getInstance();
         databaseUsers= FirebaseDatabase.getInstance().getReference("transaction");
-        String user,ngo="n2";
+        String user,ngo;
         user=fAuth.getUid();
+        ngo=str;
         Button comtrabtn=findViewById(R.id.credpay);
         comtrabtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,7 +55,7 @@ public class creditPay extends AppCompatActivity  {
                 {
                     transaction tra=new transaction(user,ngo,amount.getText().toString());
                     databaseUsers.child(user).push().setValue(tra);
-                    databaseUsers.child("shri").push().setValue(tra);
+                    databaseUsers.child(ngo).push().setValue(tra);
                     Intent j=new Intent(getApplicationContext(),splashAfterTran.class);
                     startActivity(j);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);

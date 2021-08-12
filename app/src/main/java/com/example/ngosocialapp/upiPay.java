@@ -23,8 +23,11 @@ public class upiPay extends AppCompatActivity {
         setContentView(R.layout.activity_upi_pay);
         TextInputEditText amount=findViewById(R.id.UPIAmount);
         TextInputEditText upiid=findViewById(R.id.UPInum);
+        Intent j=getIntent();
+        String str=j.getStringExtra("ngoname");
         Button upibtn=findViewById(R.id.UPIPay);
-        String user,ngo="upin";
+        String user,ngo;
+        ngo=str;
         fAuth= FirebaseAuth.getInstance();
         databaseUsers= FirebaseDatabase.getInstance().getReference("transaction");
         user=fAuth.getUid();
@@ -41,6 +44,7 @@ public class upiPay extends AppCompatActivity {
                 {
                     transaction tra=new transaction(user,ngo,amount.getText().toString());
                     databaseUsers.child(user).push().setValue(tra);
+                    databaseUsers.child(ngo).push().setValue(tra);
                     Intent j=new Intent(getApplicationContext(),splashAfterTran.class);
                     startActivity(j);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
