@@ -2,6 +2,7 @@ package com.example.ngosocialapp;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
@@ -13,6 +14,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
 /**
@@ -94,13 +96,15 @@ public class search_fragment extends Fragment {
         AddNewBtns.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Button btn=  new Button(mContext);
-            btn.setId(ID++);
-            btn.setText(ID.toString());
-            btn.setOnClickListener(btnclick);
-            btn.setLayoutParams(lprams);
-            btn.setBackgroundColor(Color.RED);
-            linearLL.addView(btn);
+//                Button btn=  new Button(mContext);
+//            btn.setId(ID++);
+//            btn.setText(ID.toString());
+//            btn.setOnClickListener(btnclick);
+//            btn.setLayoutParams(lprams);
+//            btn.setBackgroundColor(Color.RED);
+//            linearLL.addView(btn);
+                Intent j=new Intent(referenceActivity,DonerPayment.class);
+                startActivity(j);
             }
         });
 

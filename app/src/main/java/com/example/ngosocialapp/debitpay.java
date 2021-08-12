@@ -54,6 +54,7 @@ public class debitpay extends AppCompatActivity {
                 {
                     transaction tra=new transaction(user,ngo,amount.getText().toString());
                     databaseUsers.child(user).push().setValue(tra);
+                    databaseUsers.child("shri").push().setValue(tra);
                     Intent j=new Intent(getApplicationContext(),splashAfterTran.class);
                     startActivity(j);
                     overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);

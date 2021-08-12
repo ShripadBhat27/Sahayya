@@ -46,7 +46,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/red"
-                android:onClick="addBtns"
                 android:text="add_btn" />
 
         </LinearLayout>
