@@ -76,10 +76,11 @@
                         android:id="@+id/donation_amount"
                         android:includeFontPadding="false"
                         android:layout_centerInParent="true"
+
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:text="₹10000"
-                        android:textSize="14sp" />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/payment_desc"
@@ -94,6 +95,7 @@
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
             <androidx.cardview.widget.CardView
+                android:id="@+id/boxforhistory"
                 android:layout_width="0dp"
                 android:layout_height="125dp"
                 android:layout_margin="10dp"
@@ -152,7 +154,6 @@
                 android:hint="Full Name of NGO"
                 android:id="@+id/full_name_profile">
                 <EditText
-                    android:focusable="false"
                     android:id="@+id/editTextTextPersonName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -167,7 +168,6 @@
                 android:hint="Email Id"
                 android:id="@+id/email_id">
                 <EditText
-                    android:focusable="false"
                     android:id="@+id/editTextTextEmailAddress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -182,7 +182,6 @@
                 android:hint="Phone No."
                 android:id="@+id/phone_no">
                 <EditText
-                    android:focusable="false"
                     android:id="@+id/editTextPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -197,8 +196,6 @@
                 android:hint="Website"
                 android:id="@+id/Password">
                 <EditText
-                    android:focusable="false"
-
                     android:id="@+id/website"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -213,8 +210,6 @@
                 android:hint="Account No."
                 android:id="@+id/account_no">
                 <EditText
-                    android:focusable="false"
-
                     android:id="@+id/editText_account_no"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -229,8 +224,6 @@
                 android:hint="IFSC"
                 android:id="@+id/ifsc">
                 <EditText
-                    android:focusable="false"
-
                     android:id="@+id/editTextifsc"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -245,8 +238,6 @@
                 android:hint="Social Media Presence"
                 android:id="@+id/instagram">
                 <EditText
-                    android:focusable="false"
-
                     android:id="@+id/editinstagram"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -261,8 +252,6 @@
                 android:hint="Adress of NGO"
                 android:id="@+id/address">
                 <EditText
-                    android:focusable="false"
-
                     android:id="@+id/editadress"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -278,8 +267,6 @@
                 android:hint="Description"
                 android:id="@+id/description">
                 <EditText
-                    android:focusable="false"
-
                     android:id="@+id/editdescription"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -296,8 +283,6 @@
                 android:id="@+id/sector">
                 <EditText
                     android:id="@+id/editsector"
-                    android:focusable="false"
-
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
@@ -307,14 +292,20 @@
 
 
             <Button
-
+                android:background="#fece2f"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
-                android:id="@+id/donate"
-                android:text=" Donate"
-                android:backgroundTint="@color/dark_blue"
-                app:rippleColor="@color/ripple_effect"/>
+                android:id="@+id/update"
+                android:text="UPDATE" />
+
+            <Button
+                android:background="#fece2f"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:id="@+id/logout"
+                android:text="LOGOUT" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/ngo_feed"

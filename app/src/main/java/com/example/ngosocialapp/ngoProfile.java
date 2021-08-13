@@ -69,8 +69,9 @@ public class ngoProfile extends Fragment {
         if(bundle!=null){
             username=bundle.getString("sending_from_feed");
         }
-
-
+        no_of_donation = placeholder.findViewById(R.id.no_of_donation);
+        donation_amount = placeholder.findViewById(R.id.donation_amount);
+        functionfordata(username);
         DatabaseReference userref2 = FirebaseDatabase.getInstance().getReference().child("NGO_by_name").child(username);
         userref2.addValueEventListener(new ValueEventListener() {
             @Override
@@ -273,6 +274,36 @@ public class ngoProfile extends Fragment {
 
         });
     }
+
+
+
+    void functionfordata(String userId){
+
+        DatabaseReference fortransactions = FirebaseDatabase.getInstance().getReference().child("transaction").child(userId);
+        int totalammount =0 , nos=0;
+        fortransactions.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int totalammount =0 , nos=0;
+                for(DataSnapshot it : snapshot.getChildren()) {
+                    transaction t = it.getValue(transaction.class);
+                    String id = it.getKey();
+                    int ammount = Integer.parseInt(t.getAmount());
+                    totalammount+=ammount;
+                    nos = nos +1;
+                }
+                no_of_donation.setText(String.valueOf(nos));
+                donation_amount.setText(String.valueOf(totalammount));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
 }
 
 

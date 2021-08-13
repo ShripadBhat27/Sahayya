@@ -1,8 +1,12 @@
+
 package com.example.ngosocialapp;
 
 public class transaction
 {
     String donar,NGO,amount;
+
+    public transaction() {
+    }
 
     public transaction(String donar, String NGO, String amount) {
         this.donar = donar;

@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/newwelcom"
-        ></com.airbnb.lottie.LottieAnimationView>
+        app:lottie_rawRes="@raw/homesplas"
+        />
 
 </RelativeLayout>

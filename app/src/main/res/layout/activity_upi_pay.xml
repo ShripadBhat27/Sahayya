@@ -54,6 +54,8 @@
         android:layout_marginLeft="35dp"
         android:layout_marginRight="35dp"
         android:text="PAY"
+        android:backgroundTint="@color/dark_blue"
+        app:rippleColor="@color/ripple_effect"
         >
 
     </Button>
