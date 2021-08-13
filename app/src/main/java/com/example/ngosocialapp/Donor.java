@@ -10,6 +10,10 @@ public class Donor {
         this.email = email;
     }
 
+    public Donor(){
+
+    }
+
     public String getName() {
         return name;
     }

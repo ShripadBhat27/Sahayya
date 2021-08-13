@@ -1,15 +1,30 @@
 package com.example.ngosocialapp;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.database.annotations.NotNull;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -18,6 +33,15 @@ import android.widget.Toast;
  */
 public class Profile_fragment extends Fragment {
 //    Button btm;
+
+    Context mContext;
+    View placeholder;
+    ImageView profile_image ;
+    EditText email_id,full_name_profile,phone_no,age;
+    TextView fullname_field, username_field , donation_amount, no_of_donation ;
+    CardView box;
+    Button update , logout;
+    DatabaseReference userref;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -31,6 +55,16 @@ public class Profile_fragment extends Fragment {
     public Profile_fragment() {
         // Required empty public constructor
     }
+
+
+
+    @Override
+    public void onAttach(@NonNull @NotNull Context context) {
+        super.onAttach(context);
+        mContext = context;
+    }
+
+
 
     /**
      * Use this factory method to create a new instance of
@@ -50,6 +84,8 @@ public class Profile_fragment extends Fragment {
         return fragment;
     }
 
+
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,15 +93,98 @@ public class Profile_fragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.profile_fragment, container, false);
+
+        int flg = 0;
+
+        placeholder =  inflater.inflate(R.layout.profile_fragment, container, false);
+//          profile_image = placeholder.findViewById(R.id.profile_image);
+
+        String userId= FirebaseAuth.getInstance().getCurrentUser().getUid();
+        userref = FirebaseDatabase.getInstance().getReference().child("Donors").child(userId);
+        fullname_field = placeholder.findViewById(R.id.fullname_field);
+//            fullname_field.setText();
+        username_field = placeholder.findViewById((R.id.username_field));
+//            username_field.setText();
+        donation_amount = placeholder.findViewById(R.id.donation_amount);
+        box = placeholder.findViewById(R.id.boxforhistory);
+        no_of_donation = placeholder.findViewById(R.id.no_of_donation);
+        email_id = placeholder.findViewById(R.id.editTextTextEmailAddress);
+        full_name_profile = placeholder.findViewById(R.id.editTextTextPersonName);
+        phone_no = placeholder.findViewById(R.id.editTextPhone);
+        age = placeholder.findViewById(R.id.Password);
+        update = (Button) placeholder.findViewById(R.id.update);
+        logout = placeholder.findViewById(R.id.logout);
+        userref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Donor d = snapshot.getValue(Donor.class);
+                fullname_field.setText(d.getName());
+                username_field.setText(d.getName());
+                email_id.setText(d.getEmail());
+                full_name_profile.setText(d.getName());
+                age.setText(d.getAge());
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        });
+
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String name,sage,email;
+                name = full_name_profile.getText().toString();
+                email = email_id.getText().toString();
+                sage = age.getText().toString();
+                Donor newd = new Donor(name,sage,email);
+                userref.setValue(newd);
+            }
+        });
+
+        box.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Fragment selectedFragment = new transactionhistory_fragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("sending_for_transaction",userId); // Put anything what you want
+
+                selectedFragment.setArguments(bundle);
+
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
+                        selectedFragment).commit();
+            }
+        });
+
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FirebaseAuth.getInstance().signOut();
+                startActivity(new Intent(mContext.getApplicationContext(),SelectUserType.class));
+
+            }
+        });
+
+
+        return placeholder;
+
+
+
     }
+
+
     public void toggle(View view){
 //        MainActivity.flg = !MainActivity.flg;
         ;
     }
+
+
 }

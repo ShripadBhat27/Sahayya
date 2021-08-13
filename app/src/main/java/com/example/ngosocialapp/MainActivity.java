@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -97,7 +98,16 @@ public class MainActivity extends AppCompatActivity {
                             selectedFragment = new search_fragment();
                             break;
                         case R.id.profile_nav_btn:
-                            selectedFragment = new Profile_fragment();
+                            if(flg == 0) {
+                                selectedFragment = new Profile_fragment();
+//                                Toast.makeText(getApplicationContext(), " profile fragment called ", Toast.LENGTH_SHORT).show();
+
+
+                            }
+                            else {
+//                                Toast.makeText(getApplicationContext(), " NGO profile  fragment called ", Toast.LENGTH_SHORT).show();
+                                selectedFragment = new ngoprofile_fragment();
+                            }
                             break;
                         case R.id.add_new_post_nav_btn:
                             if (flg==1) {

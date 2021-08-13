@@ -16,7 +16,6 @@
             android:layout_height="300dp"
             android:padding="20dp"
             android:background="@color/teal_200">
-
             <ImageView
 
                 android:id="@+id/profile_image"
@@ -33,7 +32,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/profile_image"
                 android:includeFontPadding="false"
-                android:text="FirstName LastNAme"
+                android:text="Helping Hands"
                 android:textColor="#000"
                 android:textSize="20sp" />
 
@@ -89,7 +88,7 @@
                         android:layout_centerHorizontal="true"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
-                        android:text="Amount Donated"
+                        android:text="Donation Received"
                         android:textSize="20sp" />
 
                 </RelativeLayout>
@@ -117,14 +116,10 @@
                         android:id="@+id/no_of_donation"
                         android:includeFontPadding="false"
                         android:layout_centerInParent="true"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:text="100"
-                        android:textSize="20sp"
-
-                        />
+                        android:textSize="20sp" />
 
                     <TextView
                         android:id="@+id/donation_no"
@@ -151,10 +146,11 @@
 
 
 
+
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Full Name"
+                android:hint="Full Name of NGO"
                 android:id="@+id/full_name_profile">
                 <EditText
                     android:id="@+id/editTextTextPersonName"
@@ -196,16 +192,103 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Age"
-                >
+                android:hint="Website"
+                android:id="@+id/Password">
                 <EditText
-                    android:id="@id/Password"
+                    android:id="@+id/website"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
                     android:inputType="text"
-                    android:text="21"/>//add icon after height
+                    android:text="www.github.com "/>//add icon after height
             </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Account No."
+                android:id="@+id/account_no">
+                <EditText
+                    android:id="@+id/editText_account_no"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:text="123456789123"/>//add icon after height
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="IFSC"
+                android:id="@+id/ifsc">
+                <EditText
+                    android:id="@+id/editTextifsc"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="text"
+                    android:text="123456"/>//add icon after height
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Social Media Presence"
+                android:id="@+id/instagram">
+                <EditText
+                    android:id="@+id/editinstagram"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Instagram.com/helpinghands" />//add icon after height
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Adress of NGO"
+                android:id="@+id/address">
+                <EditText
+                    android:id="@+id/editadress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="MK Gandhi road" />//add icon after height
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Description"
+                android:id="@+id/description">
+                <EditText
+                    android:id="@+id/editdescription"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="WE are rally awesome NGO" />//add icon after height
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Sector"
+                android:id="@+id/sector">
+                <EditText
+                    android:id="@+id/editsector"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="textPersonName"
+                    android:text="Animal Relife" />//add icon after height
+            </com.google.android.material.textfield.TextInputLayout>
+
 
             <Button
                 android:background="#fece2f"
@@ -223,7 +306,19 @@
                 android:id="@+id/logout"
                 android:text="LOGOUT" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/ngo_feed"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
         </LinearLayout>    //lower part (update section)
+
+
 
     </LinearLayout>    //lower part (update section)
 
