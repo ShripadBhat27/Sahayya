@@ -38,11 +38,12 @@ Sahayya is social media app intended for NGO's. It is our attempt to increase or
 
 ## Group Members: 
 ```
-Akshay Pawar - worked on new post, feed and designed skeleton of app  
+
 Atharva Nhavkar - Worked on UI of app and documentations
 Piyush Khurud - Worked on transancation i.e. Donation  part of app 
 Shriharsh Patil - Worked on UI of app 
 Shripad Bhat - Worked on Authentication ( login and register ) and database related part of app
+Akshay Pawar - worked on new post, feed and designed skeleton of app
 ```
 
 Logos designed by ```Shubham Dhage``` 
