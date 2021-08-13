@@ -83,6 +83,7 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
         android:clickable="true"
+        app:backgroundTint="@color/theme_p1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/Instatext"
         app:srcCompat="@drawable/ic_baseline_arrow_forward_24" />
