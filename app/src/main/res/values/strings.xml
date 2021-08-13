@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">NgoSocialApp</string>
+    <string name="app_name">Sahayya</string>
     <string name="title_activity_register_donor">RegisterDonor</string>
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
