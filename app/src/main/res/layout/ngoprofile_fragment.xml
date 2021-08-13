@@ -79,17 +79,17 @@
                         android:layout_height="wrap_content"
                         android:layout_width="wrap_content"
                         android:text="₹10000"
-                        android:textSize="20sp" />
+                        android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/payment_desc"
-                        android:includeFontPadding="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_below="@id/donation_amount"
                         android:layout_centerHorizontal="true"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:includeFontPadding="false"
                         android:text="Donation Received"
-                        android:textSize="20sp" />
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -122,13 +122,13 @@
 
                     <TextView
                         android:id="@+id/donation_no"
-                        android:includeFontPadding="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_below="@id/no_of_donation"
                         android:layout_centerHorizontal="true"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:includeFontPadding="false"
                         android:text="No. of Donations"
-                        android:textSize="20sp" />
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -307,12 +307,14 @@
 
 
             <Button
-                android:background="#fece2f"
+
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
                 android:id="@+id/donate"
-                android:text=" Donate" />
+                android:text=" Donate"
+                android:backgroundTint="@color/dark_blue"
+                app:rippleColor="@color/ripple_effect"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/ngo_feed"

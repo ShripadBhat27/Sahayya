@@ -64,7 +64,8 @@
                 android:layout_height="125dp"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
-                app:cardElevation="10dp">
+                app:cardElevation="10dp"
+                >
 
                 <RelativeLayout
                     android:layout_height="match_parent"
@@ -84,13 +85,13 @@
 
                     <TextView
                         android:id="@+id/payment_desc"
-                        android:includeFontPadding="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_below="@id/donation_amount"
                         android:layout_centerHorizontal="true"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:includeFontPadding="false"
                         android:text="Amount Donated"
-                        android:textSize="20sp" />
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -128,13 +129,13 @@
 
                     <TextView
                         android:id="@+id/donation_no"
-                        android:includeFontPadding="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_below="@id/no_of_donation"
                         android:layout_centerHorizontal="true"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:includeFontPadding="false"
                         android:text="No. of Donations"
-                        android:textSize="20sp" />
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -208,20 +209,24 @@
             </com.google.android.material.textfield.TextInputLayout>
 
             <Button
-                android:background="#fece2f"
+
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
                 android:id="@+id/update"
-                android:text="UPDATE" />
+                android:text="UPDATE"
+                android:backgroundTint="@color/dark_blue"
+                app:rippleColor="@color/ripple_effect"/>
 
             <Button
-                android:background="#fece2f"
+
                 android:layout_height="wrap_content"
                 android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
                 android:id="@+id/logout"
-                android:text="LOGOUT" />
+                android:text="LOGOUT"
+                android:backgroundTint="@color/dark_blue"
+                app:rippleColor="@color/ripple_effect"/>
 
         </LinearLayout>    //lower part (update section)
 

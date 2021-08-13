@@ -84,13 +84,13 @@
 
                     <TextView
                         android:id="@+id/payment_desc"
-                        android:includeFontPadding="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_below="@id/donation_amount"
                         android:layout_centerHorizontal="true"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:includeFontPadding="false"
                         android:text="Donation Received"
-                        android:textSize="20sp" />
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
@@ -124,13 +124,13 @@
 
                     <TextView
                         android:id="@+id/donation_no"
-                        android:includeFontPadding="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_below="@id/no_of_donation"
                         android:layout_centerHorizontal="true"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
+                        android:includeFontPadding="false"
                         android:text="No. of Donations"
-                        android:textSize="20sp" />
+                        android:textSize="14sp" />
 
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
