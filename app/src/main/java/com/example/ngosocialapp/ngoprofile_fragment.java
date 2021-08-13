@@ -138,6 +138,7 @@ public class ngoprofile_fragment extends Fragment {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                     function(snapshot.getValue(NGO.class));
+                    functionfordata(snapshot.getValue(NGO.class).getName());
 //                fullname_field.setText(curr_ngo.getName());
 //                String since = "since " + curr_ngo.getYear();
 //                username_field.setText(since);
@@ -272,6 +273,34 @@ public class ngoprofile_fragment extends Fragment {
 
                 getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
                         selectedFragment).commit();
+            }
+        });
+
+    }
+
+
+    void functionfordata(String userId){
+
+        DatabaseReference fortransactions = FirebaseDatabase.getInstance().getReference().child("transaction").child(userId);
+        int totalammount =0 , nos=0;
+        fortransactions.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int totalammount =0 , nos=0;
+                for(DataSnapshot it : snapshot.getChildren()) {
+                    transaction t = it.getValue(transaction.class);
+                    String id = it.getKey();
+                    int ammount = Integer.parseInt(t.getAmount());
+                    totalammount+=ammount;
+                    nos = nos +1;
+                }
+                no_of_donation.setText(String.valueOf(nos));
+                donation_amount.setText(String.valueOf(totalammount));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
             }
         });
 

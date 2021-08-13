@@ -43,7 +43,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         holder.amountTextViewrv.setTextColor(Color.parseColor("#aeea00"));
         holder.dateTextViewrv.setText(transaction_id);
 
-        holder.amountTextViewrv.setTextColor(Color.parseColor("#FAF0E6"));
+
 //        if(transactionEntries.get(position).getTransactionType().equals(Constants.incomeCategory)) {
 //            amount="+"+transactionEntries.get(position).getAmount();
 

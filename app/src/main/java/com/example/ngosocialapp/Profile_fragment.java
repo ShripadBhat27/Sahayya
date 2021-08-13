@@ -42,7 +42,7 @@ public class Profile_fragment extends Fragment {
     CardView box;
     Button update , logout;
     DatabaseReference userref;
-
+    DatabaseReference fortransactions ;
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
@@ -120,12 +120,16 @@ public class Profile_fragment extends Fragment {
         age = placeholder.findViewById(R.id.Password);
         update = (Button) placeholder.findViewById(R.id.update);
         logout = placeholder.findViewById(R.id.logout);
+
+
+
+
         userref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Donor d = snapshot.getValue(Donor.class);
                 fullname_field.setText(d.getName());
-                username_field.setText(d.getName());
+                username_field.setText(d.getEmail());
                 email_id.setText(d.getEmail());
                 full_name_profile.setText(d.getName());
                 age.setText(d.getAge());
@@ -169,6 +173,29 @@ public class Profile_fragment extends Fragment {
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
                 startActivity(new Intent(mContext.getApplicationContext(),SelectUserType.class));
+
+            }
+        });
+
+        fortransactions = FirebaseDatabase.getInstance().getReference().child("transaction").child(userId);
+        int totalammount =0 , nos=0;
+        fortransactions.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                int totalammount =0 , nos=0;
+                for(DataSnapshot it : snapshot.getChildren()) {
+                    transaction t = it.getValue(transaction.class);
+                    String id = it.getKey();
+                    int ammount = Integer.parseInt(t.getAmount());
+                    totalammount+=ammount;
+                    nos = nos +1;
+                }
+                no_of_donation.setText(String.valueOf(nos));
+                donation_amount.setText(String.valueOf(totalammount));
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
