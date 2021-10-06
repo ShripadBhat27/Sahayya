@@ -1,6 +1,6 @@
 # **Sahayya**
 
-Sahayya is social media app intended for NGO's. It is our attempt to increase organic reach of NGO who are working for betterment of society. We completed this project as part of [Hackathon](https://zeta-hacks.hackerearth.com/) organised by [Zeta](https://www.zeta.tech/in) on hackerEarth platform.
+Sahayya is social media app intended for NGO's. It is our attempt to increase organic reach of NGO who are working for betterment of society. 
 
 ```Sahayya means Aid, Pronunciation - sāhāyya, saahaayya```
 
