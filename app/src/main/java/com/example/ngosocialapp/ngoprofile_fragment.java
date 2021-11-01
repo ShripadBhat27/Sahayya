@@ -53,7 +53,8 @@ public class ngoprofile_fragment extends Fragment {
     ImageView profile_image ;
     EditText email_id,full_name_profile,phone_no,website , account_no , ifsc , editintsa ,editaddresss , editsector, editdiscription;
     TextView fullname_field, username_field , donation_amount, no_of_donation ;
-    Button update , logout;
+    Button update , logout,NgoEventAdd;
+
     CardView box ;
     DatabaseReference userref;
 
@@ -132,6 +133,7 @@ public class ngoprofile_fragment extends Fragment {
         editaddresss = placeholder.findViewById(R.id.editadress);
         editsector = placeholder.findViewById(R.id.editsector);
         editdiscription = placeholder.findViewById(R.id.editdescription);
+        NgoEventAdd=(Button) placeholder.findViewById(R.id.NGOevent);
 
 
         userref.addValueEventListener(new ValueEventListener() {
@@ -207,6 +209,16 @@ public class ngoprofile_fragment extends Fragment {
 //                Fragment selectedFragment = new ngoProfile();
 //                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container,
 //                        selectedFragment).commit();
+            }
+        });
+        NgoEventAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                String ngoName=fullname_field.getText().toString();
+                Intent i=new Intent(mContext.getApplicationContext(),ngoEventDetails.class);
+                i.putExtra("name",ngoName);
+                startActivity(i);
             }
         });
 

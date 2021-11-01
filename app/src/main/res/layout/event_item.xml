@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="16dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/eventName"
+            android:layout_width="250sp"
+            android:layout_height="wrap_content"
+            android:text="Name:"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:id="@+id/eventDescItem"
+            android:layout_width="250sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/eventName"
+            android:layout_marginTop="10sp"
+            android:text="Description:"
+            android:textSize="20sp"></TextView>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

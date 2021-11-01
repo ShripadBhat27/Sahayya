@@ -40,7 +40,7 @@ public class Profile_fragment extends Fragment {
     EditText email_id,full_name_profile,phone_no,age;
     TextView fullname_field, username_field , donation_amount, no_of_donation ;
     CardView box;
-    Button update , logout;
+    Button update , logout ,NgoEventAdd;
     DatabaseReference userref;
     DatabaseReference fortransactions ;
     // TODO: Rename parameter arguments, choose names that match
@@ -124,6 +124,7 @@ public class Profile_fragment extends Fragment {
 
 
 
+
         userref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -176,6 +177,7 @@ public class Profile_fragment extends Fragment {
 
             }
         });
+
 
         fortransactions = FirebaseDatabase.getInstance().getReference().child("transaction").child(userId);
         int totalammount =0 , nos=0;

@@ -1,7 +1,6 @@
 package com.example.ngosocialapp;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -24,7 +23,7 @@ public class NgoProfileInfo extends AppCompatActivity {
         desc=findViewById(R.id.NgoBrief);
         web=findViewById(R.id.NgoWeb);
         insta=findViewById(R.id.NgoInsta);
-        FloatingActionButton firstNext=findViewById(R.id.nextSecond);
+        FloatingActionButton firstNext=findViewById(R.id.addEventbnt);
         firstNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v)

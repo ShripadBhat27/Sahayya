@@ -12,7 +12,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NgoSocialApp">
-        <activity android:name=".SelectUserType"></activity>
+        <activity
+            android:name=".showEventDetails"
+            android:exported="true" />
+        <activity
+            android:name=".CreateEvent"
+            android:exported="true" />
+        <activity
+            android:name=".ngoEventDetails"
+            android:exported="true" />
+        <activity android:name=".SelectUserType" />
         <activity android:name=".netbankpay" />
         <activity android:name=".splashAfterTran" />
         <activity android:name=".upiPay" />

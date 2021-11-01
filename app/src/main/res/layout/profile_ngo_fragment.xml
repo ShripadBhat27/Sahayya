@@ -298,6 +298,15 @@
                 android:layout_width="match_parent"
                 android:id="@+id/update"
                 android:text="UPDATE" />
+            <Button
+
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_width="match_parent"
+                android:id="@+id/NGOevent"
+                android:text="EVENT"
+                android:backgroundTint="@color/dark_blue"
+                app:rippleColor="@color/ripple_effect"/>
 
             <Button
                 android:background="#fece2f"
