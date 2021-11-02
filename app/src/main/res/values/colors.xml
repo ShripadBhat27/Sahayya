@@ -12,8 +12,21 @@
     <color name="ripple_effect">#43FFD9</color>
     <color name="cursor_clr">#000000</color>
     <color name="grey">#62555252</color>
-    <color name="lightgreen">#11FF00</color>
     <color name="notification_bar_color">#364AFF</color>
     <color name="blue">#364AFF</color>
     <color name="theme_p1">#1260CC</color>
+
+    <color name="gray" >#cdc9c3</color>
+    <color name="green" >#c6ebc9</color>
+    <color name="lightgreen" >#cfffa5</color>
+    <color name="skyblue" >#a7c5eb</color>
+    <color name="pink" >#f3e6e3</color>
+    <color name="color1" >#efbbcf</color>
+    <color name="color2" >#d6b0b1</color>
+    <color name="color3" >#ccf6c8</color>
+    <color name="color4" >#ffe0ac</color>
+    <color name="color5" >#e5cfe5</color>
+
+
+
 </resources>

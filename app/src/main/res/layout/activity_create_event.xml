@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CreateEvent">
+
     <com.google.android.material.textfield.TextInputLayout
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:id="@+id/event1"
@@ -82,9 +83,10 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="32dp"
         android:clickable="true"
+        android:src="@drawable/save"
         app:backgroundTint="@color/theme_p1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/event3"
-        app:srcCompat="@drawable/save" />
+         />
 
   </androidx.constraintlayout.widget.ConstraintLayout>

@@ -49,6 +49,9 @@ public class CreateEvent extends AppCompatActivity {
                 DatabaseReference root = FirebaseDatabase.getInstance().getReference("event").child(firebaseUser.getUid());
                 String md=root.push().getKey();
                 root.child(md).setValue(curEvent);
+
+                finish();
+                startActivity(new Intent(getApplicationContext(),ngoEventDetails.class));
             }
         });
 

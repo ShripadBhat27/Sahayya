@@ -26,6 +26,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class userEventAdapter extends RecyclerView.Adapter<userEventAdapter.viewHolder> {
     Context mContext;
@@ -47,6 +49,9 @@ public class userEventAdapter extends RecyclerView.Adapter<userEventAdapter.view
     @Override
     public void onBindViewHolder(@NonNull @NotNull userEventAdapter.viewHolder holder, int position) {
         event e = list.get(position);
+        int colourcode=getRandomColor();
+        holder.itemView.setBackgroundColor(holder.itemView.getResources().getColor(colourcode,null));
+
         holder.ungo.setText(e.getNgoName());
         holder.uname.setText(e.getName());
         holder.udec.setText(e.getDesc());
@@ -70,4 +75,27 @@ public class userEventAdapter extends RecyclerView.Adapter<userEventAdapter.view
             udate=itemView.findViewById(R.id.userEventDate);
         }
     }
+    private int getRandomColor()
+    {
+        List<Integer> colorcode=new ArrayList<>();
+        colorcode.add(R.color.gray);
+        colorcode.add(R.color.pink);
+        colorcode.add(R.color.lightgreen);
+        colorcode.add(R.color.skyblue);
+        colorcode.add(R.color.color1);
+        colorcode.add(R.color.color2);
+        colorcode.add(R.color.color3);
+
+        colorcode.add(R.color.color4);
+        colorcode.add(R.color.color5);
+        colorcode.add(R.color.green);
+
+        Random random=new Random();
+        int number=random.nextInt(colorcode.size());
+        return colorcode.get(number);
+
+
+
+    }
+
 }
