@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="8dp"
+    app:cardCornerRadius="8dp"
+    android:layout_margin="16dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <TextView
+            android:id="@+id/userEventNgos"
+            android:layout_width="250sp"
+            android:layout_height="wrap_content"
+            android:text="NGO Name:"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:id="@+id/userEventName"
+            android:layout_width="250sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/userEventNgos"
+            android:layout_marginTop="10sp"
+            android:text="Event name:"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:id="@+id/userEventDesc"
+            android:layout_width="250sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/userEventName"
+            android:layout_marginTop="10sp"
+            android:text="Event Desc:"
+            android:textSize="20sp"></TextView>
+
+        <TextView
+            android:id="@+id/userEventDate"
+            android:layout_width="250sp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/userEventDesc"
+            android:layout_marginTop="10sp"
+            android:text="Event Date:"
+            android:textSize="20sp"></TextView>
+        <ImageButton
+            android:id="@+id/userReg"
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            android:layout_toRightOf="@id/userEventDate"
+            android:src="@drawable/ic_baseline_app_registration_24"></ImageButton>
+
+
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

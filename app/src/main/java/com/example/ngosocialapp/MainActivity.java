@@ -87,9 +87,10 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     Fragment selectedFragment = null;
-                    if (flg==0) {
-                        bottomNav.getMenu().removeItem(R.id.add_new_post_nav_btn);
-                    }
+
+//                    if (flg==0) {
+//                        bottomNav.getMenu().getItem(R.id.add_new_post_nav_btn).setTitle("Volunteer");
+//                    }
                     switch (item.getItemId()) {
                         case R.id.home_nav_btn:
                             selectedFragment = new home();
@@ -112,6 +113,11 @@ public class MainActivity extends AppCompatActivity {
                         case R.id.add_new_post_nav_btn:
                             if (flg==1) {
                                 selectedFragment = new NewPost_fragment();
+                                break;
+                            }
+                            else
+                            {
+                                selectedFragment = new eventUser();
                                 break;
                             }
 

@@ -56,8 +56,8 @@ public class eventAdapter extends FirebaseRecyclerAdapter<event,eventAdapter.Myv
 
         public MyviewHolder(@NonNull View itemView) {
             super(itemView);
-            ename=itemView.findViewById(R.id.eventName);
-            edecp=itemView.findViewById(R.id.eventDescItem);
+            ename=itemView.findViewById(R.id.uEventNgo);
+            edecp=itemView.findViewById(R.id.uEventDesc);
         }
     }
 }
