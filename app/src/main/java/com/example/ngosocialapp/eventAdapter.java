@@ -42,13 +42,13 @@ public class eventAdapter extends FirebaseRecyclerAdapter<event,eventAdapter.Myv
         int colourcode=getRandomColor();
         holder.itemView.setBackgroundColor(holder.itemView.getResources().getColor(colourcode,null));
 
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //startActivity(new Intent(context,showEventDetails.class));
-                context.startActivity(new Intent(context,showEventDetails.class));
-            }
-        });
+//        holder.itemView.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                //startActivity(new Intent(context,showEventDetails.class));
+//                //context.startActivity(new Intent(context,showEventDetails.class));
+//            }
+//        });
     }
 
     @NonNull
